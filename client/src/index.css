@@ -35,7 +35,7 @@ body {
 .logo-glassmorphism {
   background: rgba(7, 7, 7, 0.716);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 2 solid rgba(255, 255, 255, 0.3);
 }
 
 .blue-glassmorphism {
@@ -57,8 +57,15 @@ body {
 }
 
 .eth-card {
-  background-color:#fafafa;
-  border-color: #ff0000;
+  background-color:#ff9900;
+  background-image: 
+    radial-gradient(at 83% 67%, rgb(255, 187, 0) 0, transparent 58%), 
+    radial-gradient(at 67% 20%, rgb(255, 255, 255) 0, transparent 59%), 
+    radial-gradient(at 88% 35%, rgb(255, 255, 255) 0, transparent 50%), 
+    radial-gradient(at 31% 91%, rgb(248, 245, 245) 0, transparent 52%), 
+    radial-gradient(at 27% 71%, rgb(255, 255, 255) 0, transparent 49%), 
+    radial-gradient(at 14% 39%, rgb(252, 128, 4) 0, transparent 71%), 
+    radial-gradient(at 53% 75%, rgb(237, 243, 243) 0, transparent 45%);
 }
 
 .text-gradient {
