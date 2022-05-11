@@ -62,7 +62,6 @@ export const TransactionProvider = ({ children }) => {
             const accounts = await ethereum.request({ method: 'eth_accounts' });
             if(accounts.length) {
                 setCurrentAccount(accounts[0]);
-    
                 getAllTransactions();
             } else {
                 console.log("No found account")
@@ -84,6 +83,15 @@ export const TransactionProvider = ({ children }) => {
             console.log(error);
 
             throw new Error("No ETH object");
+        }
+    }
+
+    const myAddress = async () => {
+        try {
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            alert(accounts)
+        } catch (error) {
+            throw new Error("Not found address");
         }
     }
 
@@ -139,7 +147,7 @@ export const TransactionProvider = ({ children }) => {
 
 
     return (
-        <TransactionContext.Provider value={{ connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction, transactions, isLoading }}>
+        <TransactionContext.Provider value={{ connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction, transactions, isLoading, myAddress }}>
             {children}
         </TransactionContext.Provider>
     )

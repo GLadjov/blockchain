@@ -17,7 +17,7 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
   );
 
 const Welcome = () => {
-    const { connectWallet, currentAccount, formData, sendTransaction, handleChange, isLoading } = useContext(TransactionContext);
+    const { connectWallet, currentAccount, formData, sendTransaction, handleChange, isLoading, myAddress } = useContext(TransactionContext);
 
 
     const handleSubmit = (e) => {
@@ -32,7 +32,7 @@ const Welcome = () => {
 
     return (
         <div className="flex w-full justify-center items-center">
-        <div className="flex mf:flex-row flex-col items-start justify-between md:p-15 py-12 px-4 logo-glassmorphism ">
+        <div className="flex mf:flex-row flex-col  rounded-xl border-2 items-start justify-between md:p-15 py-12 px-4 logo-glassmorphism ">
                 <div className="flex flex-1 justify-start flex-col mf-mr0-10">
                     <h1 className="text-3xl text-white sm:text-5xl py-1">
                        Send ETH with Crypto.app 
@@ -40,6 +40,15 @@ const Welcome = () => {
                     <p className="text-left text-white mt-5 md:w-9/12 w-11/12 text-base">
                        Send ETH and other Cryptocurrencies easily 
                     </p>
+                    {currentAccount && 
+                         ((<button type="button"
+                             onClick={myAddress}
+                             className="flex flex-row justify-center items-center w-60 my-5 bg-[#4bff04de] p-3 rounded-full cursor-pointer hover:bg-[#378d0a]">
+                                <p className="text-white text-base font-semibold">
+                                     Receive
+                                </p>
+                             </button>)
+                    )}
                     {!currentAccount && 
                     (<button type="button"
                      onClick={connectWallet}
