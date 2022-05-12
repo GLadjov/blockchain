@@ -3,6 +3,4 @@
 
 2.npm install in smart contract folder
 
-3. enter your metamask private key on hardhat.config.js
-
-4.npm run dev in console
+3.npm run dev in console
