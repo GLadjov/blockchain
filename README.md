@@ -5,5 +5,5 @@
 
 3.in hardhat-config file in smart_contract folder paste your metamask secret key (accounts: [ 'your metamask key' ])
 
-4.npm run dev
+4.npm run dev in client folder
 
